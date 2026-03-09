@@ -1,0 +1,22 @@
+# Environment variables — never commit real secrets
+.env
+.env.local
+.env.development
+.env.production
+
+# Keep .env.example — it has no real values and serves as a reference
+!.env.example
+
+# Dependencies
+node_modules/
+
+# Next.js build output
+.next/
+out/
+
+# macOS
+.DS_Store
+
+# Editor
+.vscode/
+.idea/
