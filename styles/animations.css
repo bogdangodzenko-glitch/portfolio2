@@ -22,11 +22,11 @@
   transition-delay: var(--delay, 0ms);
 }
 
-/* Hero elements: faster, no delay */
-.hero [data-reveal]:nth-child(1) { transition-delay: 100ms; }
-.hero [data-reveal]:nth-child(2) { transition-delay: 200ms; }
-.hero [data-reveal]:nth-child(3) { transition-delay: 320ms; }
-.hero [data-reveal]:nth-child(4) { transition-delay: 440ms; }
+/* Hero elements: staggered entrance delays */
+.hero-content > [data-reveal]:nth-child(1) { transition-delay: 100ms; }
+.hero-content > [data-reveal]:nth-child(2) { transition-delay: 200ms; }
+.hero-content > [data-reveal]:nth-child(3) { transition-delay: 320ms; }
+.hero-content > [data-reveal]:nth-child(4) { transition-delay: 440ms; }
 
 /* ── Respect reduced motion ───────────────── */
 @media (prefers-reduced-motion: reduce) {
