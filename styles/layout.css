@@ -1,0 +1,191 @@
+/* ═══════════════════════════════════════════
+   Header
+═══════════════════════════════════════════ */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  height: var(--header-h);
+  background: transparent;
+  transition: background var(--duration) var(--ease),
+              border-color var(--duration) var(--ease),
+              backdrop-filter var(--duration) var(--ease);
+  border-bottom: 1px solid transparent;
+}
+
+.site-header.scrolled {
+  background: rgba(8, 13, 26, 0.85);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom-color: var(--color-border);
+}
+
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 100%;
+}
+
+/* Logo */
+.logo {
+  font-family: var(--font-display);
+  font-size: var(--text-xl);
+  font-weight: 800;
+  color: var(--color-text);
+  letter-spacing: -0.02em;
+  transition: color var(--duration) var(--ease);
+  flex-shrink: 0;
+}
+.logo:hover {
+  color: var(--color-accent-light);
+}
+
+/* Desktop nav */
+.nav-list {
+  display: flex;
+  align-items: center;
+  gap: var(--space-8);
+}
+
+.nav-link {
+  font-size: var(--text-sm);
+  font-weight: 500;
+  color: var(--color-text-muted);
+  transition: color var(--duration) var(--ease);
+  position: relative;
+  padding-block: var(--space-1);
+}
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--color-accent);
+  border-radius: 2px;
+  transition: width var(--duration) var(--ease);
+}
+.nav-link:hover,
+.nav-link:focus-visible {
+  color: var(--color-text);
+}
+.nav-link:hover::after,
+.nav-link:focus-visible::after {
+  width: 100%;
+}
+
+/* Hamburger */
+.nav-toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  width: 36px;
+  height: 36px;
+  padding: 6px;
+  background: none;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition: border-color var(--duration) var(--ease);
+}
+.nav-toggle:hover {
+  border-color: var(--color-border-hover);
+}
+.hamburger-bar {
+  display: block;
+  width: 100%;
+  height: 1.5px;
+  background: var(--color-text-muted);
+  border-radius: 2px;
+  transform-origin: center;
+  transition: transform var(--duration) var(--ease),
+              opacity var(--duration) var(--ease);
+}
+
+/* Open state */
+.nav-toggle[aria-expanded="true"] .hamburger-bar:nth-child(1) {
+  transform: translateY(6.5px) rotate(45deg);
+}
+.nav-toggle[aria-expanded="true"] .hamburger-bar:nth-child(2) {
+  opacity: 0;
+  transform: scaleX(0);
+}
+.nav-toggle[aria-expanded="true"] .hamburger-bar:nth-child(3) {
+  transform: translateY(-6.5px) rotate(-45deg);
+}
+
+/* Mobile nav drawer */
+@media (max-width: 767px) {
+  .nav-toggle {
+    display: flex;
+  }
+  .nav {
+    display: none;
+    position: absolute;
+    top: var(--header-h);
+    left: 0;
+    right: 0;
+    background: var(--color-bg-elevated);
+    border-bottom: 1px solid var(--color-border);
+    padding: var(--space-4) var(--gutter) var(--space-6);
+  }
+  .nav.open {
+    display: block;
+  }
+  .nav-list {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0;
+  }
+  .nav-link {
+    display: block;
+    padding-block: var(--space-3);
+    font-size: var(--text-base);
+    width: 100%;
+  }
+}
+
+/* ═══════════════════════════════════════════
+   Footer
+═══════════════════════════════════════════ */
+.site-footer {
+  border-top: 1px solid var(--color-border);
+  padding-block: var(--space-8);
+  background: var(--color-bg);
+}
+
+.footer-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: var(--space-4);
+}
+
+.footer-copy {
+  font-size: var(--text-sm);
+  color: var(--color-text-faint);
+}
+
+.footer-top {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-size: var(--text-sm);
+  font-weight: 500;
+  color: var(--color-text-muted);
+  transition: color var(--duration) var(--ease),
+              transform var(--duration) var(--ease);
+}
+.footer-top:hover {
+  color: var(--color-accent-light);
+  transform: translateY(-2px);
+}
+
+/* ── Section header shared ────────────────── */
+.section-header {
+  max-width: 560px;
+}

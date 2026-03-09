@@ -1,0 +1,98 @@
+/* ═══════════════════════════════════════════
+   Contact Section
+═══════════════════════════════════════════ */
+.contact-section {
+  background: var(--color-bg-elevated);
+  border-top: 1px solid var(--color-border);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Decorative glow blob */
+.contact-section::before {
+  content: '';
+  position: absolute;
+  width: 600px;
+  height: 400px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: radial-gradient(ellipse, rgba(99, 102, 241, 0.1) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.contact-inner {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: var(--space-12);
+}
+
+.contact-text .section-label,
+.contact-text .section-title {
+  text-align: center;
+}
+
+.contact-text .section-title {
+  margin-bottom: var(--space-4);
+}
+
+.contact-description {
+  font-size: var(--text-lg);
+  color: var(--color-text-muted);
+  max-width: 480px;
+  line-height: 1.75;
+}
+
+/* ── Social buttons ───────────────────────── */
+.contact-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-4);
+  justify-content: center;
+}
+
+.social-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-3);
+  padding: var(--space-4) var(--space-8);
+  border-radius: var(--radius-full);
+  font-size: var(--text-base);
+  font-weight: 600;
+  border: 1px solid var(--color-border);
+  background: var(--color-bg-card);
+  transition: all var(--duration) var(--ease);
+  min-width: 180px;
+  justify-content: center;
+}
+.social-btn:hover,
+.social-btn:focus-visible {
+  transform: translateY(-3px);
+  border-color: var(--color-border-hover);
+}
+
+.social-btn--twitter {
+  color: var(--color-text);
+}
+.social-btn--twitter:hover,
+.social-btn--twitter:focus-visible {
+  background: rgba(29, 155, 240, 0.1);
+  border-color: rgba(29, 155, 240, 0.4);
+  color: #1d9bf0;
+  box-shadow: 0 0 24px rgba(29, 155, 240, 0.15);
+}
+
+.social-btn--linkedin {
+  color: var(--color-text);
+}
+.social-btn--linkedin:hover,
+.social-btn--linkedin:focus-visible {
+  background: rgba(10, 102, 194, 0.12);
+  border-color: rgba(10, 102, 194, 0.4);
+  color: #0a66c2;
+  box-shadow: 0 0 24px rgba(10, 102, 194, 0.15);
+}

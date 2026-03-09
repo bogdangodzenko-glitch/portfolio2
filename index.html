@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bohdan Hodzenko — Full-Stack Developer</title>
+    <meta name="description" content="Full-stack developer crafting fast, accessible, and beautiful web experiences. Browse my projects and get in touch." />
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Bohdan Hodzenko — Full-Stack Developer" />
+    <meta property="og:description" content="Full-stack developer crafting fast, accessible, and beautiful web experiences." />
+    <meta property="og:image" content="assets/og-image.png" />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Syne:wght@700;800&display=swap" rel="stylesheet" />
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="styles/reset.css" />
+    <link rel="stylesheet" href="styles/variables.css" />
+    <link rel="stylesheet" href="styles/base.css" />
+    <link rel="stylesheet" href="styles/animations.css" />
+    <link rel="stylesheet" href="styles/layout.css" />
+    <link rel="stylesheet" href="styles/hero.css" />
+    <link rel="stylesheet" href="styles/projects.css" />
+    <link rel="stylesheet" href="styles/about.css" />
+    <link rel="stylesheet" href="styles/contact.css" />
+  </head>
+  <body>
+
+    <!-- Skip to main content (accessibility) -->
+    <a class="skip-link" href="#main">Skip to main content</a>
+
+    <!-- ─── Header ─────────────────────────────────────────────────── -->
+    <header class="site-header" id="site-header">
+      <div class="container header-inner">
+        <a href="#main" class="logo" aria-label="Bohdan Hodzenko — home">BH</a>
+        <nav class="nav" aria-label="Primary navigation">
+          <ul class="nav-list" role="list">
+            <li><a class="nav-link" href="#projects">Projects</a></li>
+            <li><a class="nav-link" href="#about">About</a></li>
+            <li><a class="nav-link" href="#contact">Contact</a></li>
+          </ul>
+        </nav>
+        <button
+          class="nav-toggle"
+          aria-label="Toggle navigation menu"
+          aria-expanded="false"
+          aria-controls="nav-list"
+        >
+          <span class="hamburger-bar"></span>
+          <span class="hamburger-bar"></span>
+          <span class="hamburger-bar"></span>
+        </button>
+      </div>
+    </header>
+
+    <!-- ─── Main ────────────────────────────────────────────────────── -->
+    <main id="main">
+
+      <!-- Hero -->
+      <section class="hero" id="hero" aria-label="Introduction">
+        <div class="hero-bg" aria-hidden="true"></div>
+        <div class="container hero-content">
+          <p class="hero-eyebrow" data-reveal>Full-Stack Developer</p>
+          <h1 class="hero-title" data-reveal>
+            Hi, I'm <span class="accent">Bohdan</span><br />Hodzenko.
+          </h1>
+          <p class="hero-tagline" data-reveal>
+            I craft fast, accessible, and beautiful web experiences — from pixel-perfect interfaces to resilient back-end services.
+          </p>
+          <a class="btn btn-primary" href="#projects" data-reveal>
+            View my work
+            <svg aria-hidden="true" width="16" height="16" viewBox="0 0 16 16" fill="none">
+              <path d="M8 3v10M3 8l5 5 5-5" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </a>
+        </div>
+      </section>
+
+      <!-- Projects -->
+      <section class="section projects-section" id="projects" aria-label="Projects">
+        <div class="container">
+          <div class="section-header" data-reveal>
+            <p class="section-label">Selected work</p>
+            <h2 class="section-title">Recent Projects</h2>
+          </div>
+          <div class="projects-grid">
+
+            <!-- Card 1 -->
+            <article class="project-card" data-reveal style="--delay: 0ms">
+              <div class="project-image project-image--1" aria-hidden="true">
+                <span class="project-image-label">Dashboard</span>
+              </div>
+              <div class="project-body">
+                <h3 class="project-title">Analytics Dashboard</h3>
+                <p class="project-description">
+                  A real-time SaaS analytics dashboard with customisable widgets, role-based access, and dark mode. Handles 10k+ concurrent users.
+                </p>
+                <ul class="tech-list" aria-label="Technologies used" role="list">
+                  <li class="tech-badge">React</li>
+                  <li class="tech-badge">Node.js</li>
+                  <li class="tech-badge">PostgreSQL</li>
+                  <li class="tech-badge">WebSockets</li>
+                </ul>
+                <div class="project-links">
+                  <a class="project-link" href="#" aria-label="View Analytics Dashboard live">
+                    <svg aria-hidden="true" width="14" height="14" viewBox="0 0 14 14" fill="none">
+                      <path d="M2 12L12 2M12 2H6M12 2v6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    Live site
+                  </a>
+                  <a class="project-link" href="#" aria-label="View Analytics Dashboard source code on GitHub">
+                    <svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+                      <path d="M12 2C6.477 2 2 6.477 2 12c0 4.418 2.865 8.166 6.839 9.489.5.092.682-.217.682-.482 0-.237-.009-.868-.013-1.703-2.782.604-3.369-1.342-3.369-1.342-.454-1.154-1.11-1.461-1.11-1.461-.908-.62.069-.608.069-.608 1.004.071 1.532 1.032 1.532 1.032.892 1.529 2.341 1.087 2.912.832.091-.647.35-1.087.636-1.338-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.03-2.682-.103-.253-.447-1.27.098-2.646 0 0 .84-.269 2.75 1.026A9.578 9.578 0 0112 6.836a9.59 9.59 0 012.504.337c1.909-1.295 2.747-1.026 2.747-1.026.547 1.376.202 2.393.1 2.646.64.698 1.027 1.591 1.027 2.682 0 3.841-2.337 4.687-4.565 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.741 0 .267.18.579.688.481C19.138 20.163 22 16.418 22 12c0-5.523-4.477-10-10-10z"/>
+                    </svg>
+                    GitHub
+                  </a>
+                </div>
+              </div>
+            </article>
+
+            <!-- Card 2 -->
+            <article class="project-card" data-reveal style="--delay: 100ms">
+              <div class="project-image project-image--2" aria-hidden="true">
+                <span class="project-image-label">E-Commerce</span>
+              </div>
+              <div class="project-body">
+                <h3 class="project-title">Storefront</h3>
+                <p class="project-description">
+                  A headless e-commerce storefront with a custom checkout flow, Stripe integration, and sub-second page loads via static generation.
+                </p>
+                <ul class="tech-list" aria-label="Technologies used" role="list">
+                  <li class="tech-badge">Next.js</li>
+                  <li class="tech-badge">TypeScript</li>
+                  <li class="tech-badge">Stripe</li>
+                  <li class="tech-badge">Sanity</li>
+                </ul>
+                <div class="project-links">
+                  <a class="project-link" href="#" aria-label="View Storefront live">
+                    <svg aria-hidden="true" width="14" height="14" viewBox="0 0 14 14" fill="none">
+                      <path d="M2 12L12 2M12 2H6M12 2v6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    Live site
+                  </a>
+                  <a class="project-link" href="#" aria-label="View Storefront source code on GitHub">
+                    <svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+                      <path d="M12 2C6.477 2 2 6.477 2 12c0 4.418 2.865 8.166 6.839 9.489.5.092.682-.217.682-.482 0-.237-.009-.868-.013-1.703-2.782.604-3.369-1.342-3.369-1.342-.454-1.154-1.11-1.461-1.11-1.461-.908-.62.069-.608.069-.608 1.004.071 1.532 1.032 1.532 1.032.892 1.529 2.341 1.087 2.912.832.091-.647.35-1.087.636-1.338-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.03-2.682-.103-.253-.447-1.27.098-2.646 0 0 .84-.269 2.75 1.026A9.578 9.578 0 0112 6.836a9.59 9.59 0 012.504.337c1.909-1.295 2.747-1.026 2.747-1.026.547 1.376.202 2.393.1 2.646.64.698 1.027 1.591 1.027 2.682 0 3.841-2.337 4.687-4.565 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.741 0 .267.18.579.688.481C19.138 20.163 22 16.418 22 12c0-5.523-4.477-10-10-10z"/>
+                    </svg>
+                    GitHub
+                  </a>
+                </div>
+              </div>
+            </article>
+
+            <!-- Card 3 -->
+            <article class="project-card" data-reveal style="--delay: 200ms">
+              <div class="project-image project-image--3" aria-hidden="true">
+                <span class="project-image-label">API Service</span>
+              </div>
+              <div class="project-body">
+                <h3 class="project-title">REST API Service</h3>
+                <p class="project-description">
+                  A high-throughput REST API powering a mobile app with 50k+ monthly active users. Features JWT auth, rate limiting, and full test coverage.
+                </p>
+                <ul class="tech-list" aria-label="Technologies used" role="list">
+                  <li class="tech-badge">Go</li>
+                  <li class="tech-badge">PostgreSQL</li>
+                  <li class="tech-badge">Redis</li>
+                  <li class="tech-badge">Docker</li>
+                </ul>
+                <div class="project-links">
+                  <a class="project-link" href="#" aria-label="View REST API Service documentation">
+                    <svg aria-hidden="true" width="14" height="14" viewBox="0 0 14 14" fill="none">
+                      <path d="M2 12L12 2M12 2H6M12 2v6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    Docs
+                  </a>
+                  <a class="project-link" href="#" aria-label="View REST API Service source code on GitHub">
+                    <svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+                      <path d="M12 2C6.477 2 2 6.477 2 12c0 4.418 2.865 8.166 6.839 9.489.5.092.682-.217.682-.482 0-.237-.009-.868-.013-1.703-2.782.604-3.369-1.342-3.369-1.342-.454-1.154-1.11-1.461-1.11-1.461-.908-.62.069-.608.069-.608 1.004.071 1.532 1.032 1.532 1.032.892 1.529 2.341 1.087 2.912.832.091-.647.35-1.087.636-1.338-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.03-2.682-.103-.253-.447-1.27.098-2.646 0 0 .84-.269 2.75 1.026A9.578 9.578 0 0112 6.836a9.59 9.59 0 012.504.337c1.909-1.295 2.747-1.026 2.747-1.026.547 1.376.202 2.393.1 2.646.64.698 1.027 1.591 1.027 2.682 0 3.841-2.337 4.687-4.565 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.741 0 .267.18.579.688.481C19.138 20.163 22 16.418 22 12c0-5.523-4.477-10-10-10z"/>
+                    </svg>
+                    GitHub
+                  </a>
+                </div>
+              </div>
+            </article>
+
+            <!-- Card 4 -->
+            <article class="project-card" data-reveal style="--delay: 300ms">
+              <div class="project-image project-image--4" aria-hidden="true">
+                <span class="project-image-label">UI Library</span>
+              </div>
+              <div class="project-body">
+                <h3 class="project-title">Component Library</h3>
+                <p class="project-description">
+                  An open-source library of 30+ accessible, themeable UI components with full keyboard support, ARIA patterns, and zero runtime dependencies.
+                </p>
+                <ul class="tech-list" aria-label="Technologies used" role="list">
+                  <li class="tech-badge">TypeScript</li>
+                  <li class="tech-badge">CSS</li>
+                  <li class="tech-badge">Storybook</li>
+                  <li class="tech-badge">Vitest</li>
+                </ul>
+                <div class="project-links">
+                  <a class="project-link" href="#" aria-label="View Component Library live">
+                    <svg aria-hidden="true" width="14" height="14" viewBox="0 0 14 14" fill="none">
+                      <path d="M2 12L12 2M12 2H6M12 2v6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    Live site
+                  </a>
+                  <a class="project-link" href="#" aria-label="View Component Library source code on GitHub">
+                    <svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+                      <path d="M12 2C6.477 2 2 6.477 2 12c0 4.418 2.865 8.166 6.839 9.489.5.092.682-.217.682-.482 0-.237-.009-.868-.013-1.703-2.782.604-3.369-1.342-3.369-1.342-.454-1.154-1.11-1.461-1.11-1.461-.908-.62.069-.608.069-.608 1.004.071 1.532 1.032 1.532 1.032.892 1.529 2.341 1.087 2.912.832.091-.647.35-1.087.636-1.338-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.03-2.682-.103-.253-.447-1.27.098-2.646 0 0 .84-.269 2.75 1.026A9.578 9.578 0 0112 6.836a9.59 9.59 0 012.504.337c1.909-1.295 2.747-1.026 2.747-1.026.547 1.376.202 2.393.1 2.646.64.698 1.027 1.591 1.027 2.682 0 3.841-2.337 4.687-4.565 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.741 0 .267.18.579.688.481C19.138 20.163 22 16.418 22 12c0-5.523-4.477-10-10-10z"/>
+                    </svg>
+                    GitHub
+                  </a>
+                </div>
+              </div>
+            </article>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- About -->
+      <section class="section about-section" id="about" aria-label="About me">
+        <div class="container about-inner">
+          <div class="about-image-wrap" data-reveal>
+            <div class="about-image" aria-hidden="true">
+              <span class="about-image-initials">BH</span>
+            </div>
+          </div>
+          <div class="about-content" data-reveal>
+            <p class="section-label">About me</p>
+            <h2 class="section-title">A bit about myself</h2>
+            <p class="about-bio">
+              I'm a full-stack developer with a passion for building products that are as delightful to use as they are solid under the hood. I care deeply about performance, accessibility, and clean code that teammates actually enjoy reading.
+            </p>
+            <p class="about-bio">
+              When I'm not coding, you'll find me contributing to open source, exploring type-system rabbit holes, or hunting for great coffee.
+            </p>
+            <div class="skills" aria-label="Skills">
+              <span class="tech-badge">HTML &amp; CSS</span>
+              <span class="tech-badge">JavaScript</span>
+              <span class="tech-badge">TypeScript</span>
+              <span class="tech-badge">React</span>
+              <span class="tech-badge">Node.js</span>
+              <span class="tech-badge">Go</span>
+              <span class="tech-badge">PostgreSQL</span>
+              <span class="tech-badge">Docker</span>
+              <span class="tech-badge">Figma</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Contact -->
+      <section class="section contact-section" id="contact" aria-label="Contact">
+        <div class="container contact-inner">
+          <div class="contact-text" data-reveal>
+            <p class="section-label">Get in touch</p>
+            <h2 class="section-title">Let's work together</h2>
+            <p class="contact-description">
+              I'm always open to interesting projects and conversations. Reach out on social media — I'd love to hear from you.
+            </p>
+          </div>
+          <div class="contact-links" data-reveal>
+            <a
+              class="social-btn social-btn--twitter"
+              href="https://twitter.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Visit my Twitter profile (opens in new tab)"
+            >
+              <svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.744l7.733-8.835L1.254 2.25H8.08l4.253 5.622 5.91-5.622zm-1.161 17.52h1.833L7.084 4.126H5.117L17.083 19.77z"/>
+              </svg>
+              Twitter / X
+            </a>
+            <a
+              class="social-btn social-btn--linkedin"
+              href="https://linkedin.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Visit my LinkedIn profile (opens in new tab)"
+            >
+              <svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+              </svg>
+              LinkedIn
+            </a>
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+    <!-- ─── Footer ───────────────────────────────────────────────────── -->
+    <footer class="site-footer">
+      <div class="container footer-inner">
+        <p class="footer-copy">&copy; <span id="year"></span> Bohdan Hodzenko. Built with HTML &amp; CSS.</p>
+        <a class="footer-top" href="#main" aria-label="Back to top">
+          <svg aria-hidden="true" width="16" height="16" viewBox="0 0 16 16" fill="none">
+            <path d="M8 13V3M3 8l5-5 5 5" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          Back to top
+        </a>
+      </div>
+    </footer>
+
+    <script src="scripts/main.js"></script>
+  </body>
+</html>
