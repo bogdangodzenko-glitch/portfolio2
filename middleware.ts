@@ -2,20 +2,17 @@ import { createServerClient } from '@supabase/ssr'
 import { NextResponse, type NextRequest } from 'next/server'
 
 export async function middleware(request: NextRequest) {
-  const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL
-  const supabaseKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY
+  try {
+    const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL
+    const supabaseKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY
 
-  // Skip middleware if env vars aren't configured yet
-  if (!supabaseUrl || !supabaseKey) {
-    return NextResponse.next({ request })
-  }
+    if (!supabaseUrl || !supabaseKey) {
+      return NextResponse.next({ request })
+    }
 
-  let supabaseResponse = NextResponse.next({ request })
+    let supabaseResponse = NextResponse.next({ request })
 
-  const supabase = createServerClient(
-    supabaseUrl,
-    supabaseKey,
-    {
+    const supabase = createServerClient(supabaseUrl, supabaseKey, {
       cookies: {
         getAll() {
           return request.cookies.getAll()
@@ -30,13 +27,14 @@ export async function middleware(request: NextRequest) {
           )
         },
       },
-    }
-  )
+    })
 
-  // Refreshes the session — do not remove
-  await supabase.auth.getUser()
-
-  return supabaseResponse
+    await supabase.auth.getUser()
+    return supabaseResponse
+  } catch {
+    // Never let middleware crash the entire app
+    return NextResponse.next({ request })
+  }
 }
 
 export const config = {
